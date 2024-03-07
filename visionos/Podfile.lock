@@ -21,6 +21,9 @@ PODS:
   - hermes-engine/inspector_chrome (0.73.6)
   - hermes-engine/Public (0.73.6)
   - libevent (2.1.12.1)
+  - PromisesObjC (2.4.0)
+  - PromisesSwift (2.4.0):
+    - PromisesObjC (= 2.4.0)
   - RCT-Folly (2022.05.16.00):
     - boost
     - DoubleConversion
@@ -922,6 +925,12 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
+  - react-native-video (6.0.0-beta.5):
+    - React-Core
+    - react-native-video/Video (= 6.0.0-beta.5)
+  - react-native-video/Video (6.0.0-beta.5):
+    - PromisesSwift
+    - React-Core
   - React-nativeconfig (0.73.6)
   - React-NativeModulesApple (0.73.6):
     - glog
@@ -1109,6 +1118,10 @@ PODS:
     - React-jsi (= 0.73.6)
     - React-logger (= 0.73.6)
     - React-perflogger (= 0.73.6)
+  - RNGestureHandler (2.15.0):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
   - SocketRocket (0.7.0.1)
   - Yoga (1.14.0)
 
@@ -1144,6 +1157,7 @@ DEPENDENCIES:
   - "React-jsinspector (from `../node_modules/@callstack/react-native-visionos/ReactCommon/jsinspector-modern`)"
   - "React-logger (from `../node_modules/@callstack/react-native-visionos/ReactCommon/logger`)"
   - "React-Mapbuffer (from `../node_modules/@callstack/react-native-visionos/ReactCommon`)"
+  - react-native-video (from `../node_modules/react-native-video`)
   - "React-nativeconfig (from `../node_modules/@callstack/react-native-visionos/ReactCommon`)"
   - "React-NativeModulesApple (from `../node_modules/@callstack/react-native-visionos/ReactCommon/react/nativemodule/core/platform/ios`)"
   - "React-perflogger (from `../node_modules/@callstack/react-native-visionos/ReactCommon/reactperflogger`)"
@@ -1167,8 +1181,14 @@ DEPENDENCIES:
   - "React-runtimescheduler (from `../node_modules/@callstack/react-native-visionos/ReactCommon/react/renderer/runtimescheduler`)"
   - "React-utils (from `../node_modules/@callstack/react-native-visionos/ReactCommon/react/utils`)"
   - "ReactCommon/turbomodule/core (from `../node_modules/@callstack/react-native-visionos/ReactCommon`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "SocketRocket (from `../node_modules/@callstack/react-native-visionos/third-party-podspecs/SocketRocket.podspec`)"
   - "Yoga (from `../node_modules/@callstack/react-native-visionos/ReactCommon/yoga`)"
+
+SPEC REPOS:
+  trunk:
+    - PromisesObjC
+    - PromisesSwift
 
 EXTERNAL SOURCES:
   boost:
@@ -1230,6 +1250,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@callstack/react-native-visionos/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/@callstack/react-native-visionos/ReactCommon"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
   React-nativeconfig:
     :path: "../node_modules/@callstack/react-native-visionos/ReactCommon"
   React-NativeModulesApple:
@@ -1276,6 +1298,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@callstack/react-native-visionos/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/@callstack/react-native-visionos/ReactCommon"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   SocketRocket:
     :podspec: "../node_modules/@callstack/react-native-visionos/third-party-podspecs/SocketRocket.podspec"
   Yoga:
@@ -1290,6 +1314,8 @@ SPEC CHECKSUMS:
   glog: 4f05d17aa39a829fee878689fc9a41af587fabba
   hermes-engine: c750f27b9153372f12c692848e002ddc0cb4f741
   libevent: 52e59ee22d1d26860b260efdea3e858c2f9b80d0
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
   RCT-Folly: 08b69b8ee3f4c5baf3a18a468b4d5a56276435fa
   RCTRequired: c130a444f9b5660fe79c316f89d95b943573dfa5
   RCTTypeSafety: e97df089e53995c10c641bd6f84d6d67d79fbbc5
@@ -1311,6 +1337,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 93fe0b43a5c9d5599d51bf638e6f129ee7156632
   React-logger: e19e8394e8cafb10d1961741e99245ed887dc189
   React-Mapbuffer: c216d336b11b76922fff6ae672f7771d600e5f0e
+  react-native-video: df7d8a4c8568ed4a31b28e6cd2bfa4a98b186e36
   React-nativeconfig: c781787d81cf4f420617673b252423309023451f
   React-NativeModulesApple: 383ec65b56f8bdc76e857b0c583d5228cd298625
   React-perflogger: 368635e0c006c6688c73576399f72f55294602a7
@@ -1334,9 +1361,10 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 4bc7ae470a4099bc67fb3511883996a3b13467eb
   React-utils: 380e5df36d84649b97f4f1153b3441866aaa59f5
   ReactCommon: 230dec81cfb82eb90cf351c64cb7929d66118bd9
+  RNGestureHandler: deda62b8339496ba721a45e0f3e2d7a319932cee
   SocketRocket: 0ba3e799f983d2dfa878777017659ef6c866e5c6
   Yoga: 766ea85763666ed0215547e29ab6a20e263e51f8
 
 PODFILE CHECKSUM: be7f89a05df0ce53e7c9e82a09c0b4fbdf32b3af
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
